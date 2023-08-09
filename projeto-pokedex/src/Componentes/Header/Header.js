@@ -1,10 +1,17 @@
 import React from 'react'
+import { HeaderContainer, Nav, Title } from './headerStyle'
+
+
 
 const Header = () => {
   return (
-    <div>
-      <h1>Header</h1>
-    </div>
+   <HeaderContainer>
+    <Title>Pokedex</Title>
+    <Nav>
+      <a href="/">Home</a>
+      <a href="/pokedex">Pokedex</a>
+    </Nav>
+   </HeaderContainer>
   )
 }
 
