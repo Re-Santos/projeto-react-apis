@@ -1,12 +1,13 @@
+import React from "react";
 
-import './App.css';
+import Home from "./Home/Home";
+import Header from "./Componentes/Header/Header";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       <h1>Projeto pokedex</h1>
-      </header>
+    <div>
+     <Home/>
     </div>
   );
 }
