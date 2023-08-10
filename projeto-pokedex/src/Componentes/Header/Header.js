@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components';
 import { HeaderContainer, Nav, Title } from './headerStyle';
 import {Link} from 'react-router-dom';
 

@@ -1,12 +1,16 @@
 import React from 'react'
+import { CardContainer } from './pokemonCardStyle'
 
-const PokemonCard = () => {
+
+const PokemonCard = ({pokemon, onAddToPokedex}) => {
 
   
   return (
-    <div>
-      <h3>Pokemon Card</h3>
-    </div>
+    <CardContainer>
+      <h3>{pokemon.name}</h3>
+      {/* <button>Adicionar</button> */}
+      <button onClick={() => onAddToPokedex(pokemon)}>Adicionar</button>
+    </CardContainer>
   )
 }
 

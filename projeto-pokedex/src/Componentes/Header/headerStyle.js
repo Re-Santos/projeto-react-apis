@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import React from 'react'
 
 export const HeaderContainer= styled.div`
    background: lightblue;
@@ -15,12 +14,13 @@ export const Title = styled.h1`
 
 export const Nav = styled.nav`
    display:flex;
-   justify´content:center;
+   justify-content:space-between;
    margin:10px 0;
 
-   a{
+   :link{
     color: #007bff;
     text-decoration:none;
+    
    }
 
 `;
