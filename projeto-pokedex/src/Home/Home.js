@@ -5,7 +5,6 @@ import PokemonCard from '../Componentes/PokemonCard/PokemonCard'
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
       <Header/>
       <hr/>
       <PokemonCard/>

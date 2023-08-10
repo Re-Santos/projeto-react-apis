@@ -1,13 +1,12 @@
 import React from "react";
-
-import Home from "./Home/Home";
-import Header from "./Componentes/Header/Header";
+import { AppRouter } from "./Routes/AppRouter";
 
 
-function App() {
+
+const App = () => {
   return (
     <div>
-     <Home/>
+     <AppRouter/>
     </div>
   );
 }

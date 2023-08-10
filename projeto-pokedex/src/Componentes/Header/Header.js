@@ -1,6 +1,7 @@
 import React from 'react'
-import { HeaderContainer, Nav, Title } from './headerStyle'
-
+import styled from 'styled-components';
+import { HeaderContainer, Nav, Title } from './headerStyle';
+import {Link} from 'react-router-dom';
 
 
 const Header = () => {
@@ -8,8 +9,8 @@ const Header = () => {
    <HeaderContainer>
     <Title>Pokedex</Title>
     <Nav>
-      <a href="/">Home</a>
-      <a href="/pokedex">Pokedex</a>
+      <Link to="/">Home</Link>
+      <Link to="/pokedex">Pokedex</Link>
     </Nav>
    </HeaderContainer>
   )
