@@ -3,7 +3,7 @@ import styled from "styled-components";
 import React from 'react'
 
 export const HeaderContainer= styled.div`
-   background: #fff;
+   background: lightblue;
    padding:10px;
 
 `;
