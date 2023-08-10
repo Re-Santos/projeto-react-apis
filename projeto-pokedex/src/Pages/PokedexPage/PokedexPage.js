@@ -1,11 +1,19 @@
 import React from 'react'
+import PokemonCard from '../../Componentes/PokemonCard/PokemonCard'
+import { PokedexContainer } from './pokedexPageStyle';
 
-const PokedexPage = () => {
+
+const PokedexPage = ({ pokedex, removeFromPokedex }) => {
   return (
-    <div>
-      <h1>PokedexPage</h1>
-    </div>
-  )
-}
-
+    <PokedexContainer>
+      {pokedex.map(pokemon => (
+        <PokemonCard
+          key={pokemon.name}
+          pokemon={pokemon}
+          onAddToPokedex={removeFromPokedex}
+        />
+      ))}
+    </PokedexContainer>
+  );
+};
 export default PokedexPage
