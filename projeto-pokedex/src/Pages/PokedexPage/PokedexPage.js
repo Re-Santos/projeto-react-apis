@@ -1,5 +1,5 @@
 import React from 'react'
-import PokemonCard from '../../Componentes/PokemonCard/PokemonCard'
+import PokemonCard from '../../Componentes/PokemonCard/PokemonCard';
 import { PokedexContainer } from './pokedexPageStyle';
 
 
