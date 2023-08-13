@@ -8,5 +8,11 @@ export const CardContainer = styled.div`
   margin: 16px;
   width: 200px;
   text-align: center;
+
+  img {
+    height: 200px;
+  }
+  
+
 `;
 

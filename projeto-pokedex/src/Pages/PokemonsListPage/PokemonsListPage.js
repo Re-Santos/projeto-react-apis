@@ -9,7 +9,7 @@ const PokemonsListPage = () => {
    const [pokedex, setPokedex] = useState([]);
    
    useEffect(()=>{
-      axios.get("https://pokeapi.co/api/v2/pokemon")
+      axios.get('https://pokeapi.co/api/v2/pokemon')
       .then(response =>{
         setPokemonList(response.data.results);
       })
@@ -27,7 +27,7 @@ const PokemonsListPage = () => {
       {pokemonList.map(pokemon =>(
         <PokemonCard 
         key ={pokemon.name} 
-        pokemon={`${BASE_URL}/${pokemon.name}`}
+        pokemon={pokemon}
         onAddToPokedex={addToPokedex}
         />
       ))}
