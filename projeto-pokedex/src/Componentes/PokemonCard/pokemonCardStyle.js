@@ -13,6 +13,8 @@ export const CardContainer = styled.div`
     height: 200px;
   }
   
-
+  button{
+    width: 50% 50%
+  }
 `;
 

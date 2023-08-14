@@ -5,14 +5,20 @@ import PokedexPage from "../Pages/PokedexPage/PokedexPage";
 import PokemonDetailPage from "../Pages/PokemonDetailPage/PokemonDetailPage";
 import PokemonsListPage from "../Pages/PokemonsListPage/PokemonsListPage";
 
-export const AppRouter = () => {
+export const AppRouter = ({pokedex, addToPokedex, removeFromPokedex}) => {
 
     return (
         <BrowserRouter>
-            <Header/>
+            {/* <Header/> */}
             <Routes>
-                <Route path="/" element={<PokemonsListPage/>} />
-                <Route path="/pokedex" element={<PokedexPage/>} />
+                <Route path="/" element={<PokemonsListPage
+                pokedex={pokedex}
+                addToPokedex={addToPokedex}
+                />} />
+                <Route path="/pokedex" element={<PokedexPage 
+                pokedex={pokedex}
+                removeFromPokedex={removeFromPokedex}
+                />} />
                 <Route path="/pokemon/:id" element={<PokemonDetailPage/>} />
             </Routes>
         </BrowserRouter>
