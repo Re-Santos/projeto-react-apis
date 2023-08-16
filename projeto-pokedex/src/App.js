@@ -16,16 +16,6 @@ const App = () => {
     }
   };
 
-//   const addToPokedex = (pokemon) => {
-
-//     const isAlreadyInPokedex = pokedex.some (p => p.name === pokemon.name);
-
-//     if(!isAlreadyInPokedex){
-//     setPokedex(prevPokedex => [...prevPokedex, pokemon]);
-//   } else{
-//     console.log ('Este pokemon já foi capturado!')
-//   }
-// };
   const removeFromPokedex = (pokemon) => {
     setPokedex(prevPokedex => prevPokedex.filter(p => p.name !== pokemon.name));
   };
@@ -37,6 +27,7 @@ const App = () => {
      pokedex={pokedex} 
      addToPokedex={addToPokedex} 
      removeFromPokedex={removeFromPokedex} 
+  
      />
     </div>
   );

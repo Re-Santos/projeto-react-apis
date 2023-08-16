@@ -1,9 +1,10 @@
 import React,{useEffect, useState} from 'react';
 import axios from 'axios'
 import { CardContainer } from './pokemonCardStyle'
+import PokemonsListPage from '../../Pages/PokemonsListPage/PokemonsListPage';
 
 
-const PokemonCard = ({pokemon, addToPokedex, onRemoveFromPokedex}) => {
+const PokemonCard = ({pokemon, addToPokedex, removeFromPokedex, activePage}) => {
  const  [pokemonData, setPokemonData] = useState(null)
  
   useEffect(()=>{
@@ -25,10 +26,13 @@ const PokemonCard = ({pokemon, addToPokedex, onRemoveFromPokedex}) => {
        
       <h3>{pokemon.name}</h3>
       {console.log(pokemon)}
-
+      {/* activePage=> usa a condição ternária para mostrar o botão correto em cada página */}
+      {activePage === "/" ?( 
       <button onClick={() => addToPokedex(pokemon)}>Adicionar</button>
+      ): 
+      <button onClick={() => removeFromPokedex(pokemon)}>Remover</button>}
       <button>Ver detalhes</button>
-      {/* <button onClick={() => onRemoveFromPokedex(pokemon)}>Remover</button> */}
+     
     </CardContainer>
   )
 }

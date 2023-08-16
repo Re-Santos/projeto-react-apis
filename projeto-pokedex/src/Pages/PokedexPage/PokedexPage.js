@@ -17,7 +17,8 @@ const PokedexPage = ({pokedex,removeFromPokedex}) => {
         <PokemonCard
           key={pokemon.name}
           pokemon={pokemon}
-          onRemoveFromPokedex={removeFromPokedex}
+          removeFromPokedex={removeFromPokedex}
+          activePage="/pokedex"
         />
       ))}
     </PokedexContainer>
