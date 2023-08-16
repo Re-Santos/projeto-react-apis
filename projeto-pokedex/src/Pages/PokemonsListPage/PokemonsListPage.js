@@ -38,6 +38,7 @@ const PokemonsListPage = ({pokedex, addToPokedex}) => {
         key ={pokemon.name} 
         pokemon={pokemon}
         addToPokedex={addToPokedex}
+        activePage = "/"
         />
       ))}
     </HomeContainer>
