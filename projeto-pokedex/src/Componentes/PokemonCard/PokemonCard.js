@@ -3,7 +3,7 @@ import axios from 'axios'
 import { CardContainer } from './pokemonCardStyle'
 
 
-const PokemonCard = ({pokemon, onAddToPokedex, onRemoveFromPokedex}) => {
+const PokemonCard = ({pokemon, addToPokedex, onRemoveFromPokedex}) => {
  const  [pokemonData, setPokemonData] = useState(null)
  
   useEffect(()=>{
@@ -26,7 +26,7 @@ const PokemonCard = ({pokemon, onAddToPokedex, onRemoveFromPokedex}) => {
       <h3>{pokemon.name}</h3>
       {console.log(pokemon)}
 
-      <button onClick={() => onAddToPokedex(pokemon)}>Adicionar</button>
+      <button onClick={() => addToPokedex(pokemon)}>Adicionar</button>
       <button>Ver detalhes</button>
       {/* <button onClick={() => onRemoveFromPokedex(pokemon)}>Remover</button> */}
     </CardContainer>

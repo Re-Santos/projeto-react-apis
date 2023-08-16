@@ -7,7 +7,7 @@ import Header from '../../Componentes/Header/Header';
 import { Link } from 'react-router-dom';
 
 
-const PokemonsListPage = (pokedex, addToPokedex) => {
+const PokemonsListPage = ({pokedex, addToPokedex}) => {
    const [pokemonList, setPokemonList]= useState([]);
   //  const [pokedex, setPokedex] = useState([]);
    
@@ -29,7 +29,7 @@ const PokemonsListPage = (pokedex, addToPokedex) => {
   return (
     <>
     <div>
-      <Header rightButton={<Link to="/pokedex">Pokedex</Link>} />
+      <Header rightButton={<Link to="/pokedex">Ver minha Pokedex</Link>} />
     </div>
     <HomeContainer>
        {pokemonList.map(pokemon =>(
@@ -37,7 +37,7 @@ const PokemonsListPage = (pokedex, addToPokedex) => {
         <PokemonCard 
         key ={pokemon.name} 
         pokemon={pokemon}
-        onAddToPokedex={addToPokedex}
+        addToPokedex={addToPokedex}
         />
       ))}
     </HomeContainer>
