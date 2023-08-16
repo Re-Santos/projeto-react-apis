@@ -29,14 +29,14 @@ const App = () => {
   const removeFromPokedex = (pokemon) => {
     setPokedex(prevPokedex => prevPokedex.filter(p => p.name !== pokemon.name));
   };
-
+ 
   return (
     <div>
      <AppRouter 
     
      pokedex={pokedex} 
-     AddToPokedex={addToPokedex} 
-     onremoveFromPokedex={removeFromPokedex} 
+     addToPokedex={addToPokedex} 
+     removeFromPokedex={removeFromPokedex} 
      />
     </div>
   );

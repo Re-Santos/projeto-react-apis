@@ -10,7 +10,7 @@ const PokedexPage = ({pokedex,removeFromPokedex}) => {
   return (
     <>
       <div>
-      <Header leftButton={<Link to="/">Back to Pokemon List</Link>} />
+      <Header leftButton={<Link to="/">Voltar para Lista de pokemons</Link>} />
       </div>
     <PokedexContainer>
       {pokedex.map(pokemon => (
