@@ -4,6 +4,7 @@ import { AppRouter } from "./Routes/AppRouter";
 
 const App = () => {
   const [pokedex, setPokedex] = useState([]);
+  
 
   const addToPokedex = (pokemonToAdd) => {
     const isAlreadyOnPokedex = pokedex.find(
