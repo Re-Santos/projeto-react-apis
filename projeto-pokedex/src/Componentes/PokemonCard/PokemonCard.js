@@ -2,10 +2,11 @@ import React,{useEffect, useState} from 'react';
 import axios from 'axios'
 import { CardContainer } from './pokemonCardStyle'
 import PokemonsListPage from '../../Pages/PokemonsListPage/PokemonsListPage';
-
+import { useNavigate } from 'react-router-dom';
 
 const PokemonCard = ({pokemon, addToPokedex, removeFromPokedex, activePage}) => {
  const  [pokemonData, setPokemonData] = useState(null)
+ const navigation = useNavigate();
  
   useEffect(()=>{
     axios.get(pokemon.url)
@@ -20,6 +21,10 @@ const PokemonCard = ({pokemon, addToPokedex, removeFromPokedex, activePage}) => 
  },[pokemon.url]);
     console.log(pokemonData)
 
+    const goToDetailsPage = (name) => {
+      navigation (`/pokemon/${pokemon.name}`, { state: { pokemonData } });
+    };
+
   return (
     <CardContainer>
       <img src={pokemonData?.sprites?.front_default}alt={pokemon.name} />
@@ -31,10 +36,12 @@ const PokemonCard = ({pokemon, addToPokedex, removeFromPokedex, activePage}) => 
       <button onClick={() => addToPokedex(pokemon)}>Adicionar</button>
       ): 
       <button onClick={() => removeFromPokedex(pokemon)}>Remover</button>}
-      <button>Ver detalhes</button>
+      <button onClick={() => goToDetailsPage(navigation, pokemon.name)}>Ver detalhes</button>
+      {/* <button onClick={() => detailsClickPokemon(pokemon)}>Detalhes</button> */}
      
     </CardContainer>
   )
 }
 
 export default PokemonCard
+// O botão e a função de detalhes não estão funcionando, comentei para não perder o raciocinio
