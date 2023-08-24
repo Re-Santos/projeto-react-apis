@@ -3,13 +3,14 @@ import axios from 'axios'
 import { CardContainer } from './pokemonCardStyle'
 import PokemonsListPage from '../../Pages/PokemonsListPage/PokemonsListPage';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../../constants/url';
 
 const PokemonCard = ({pokemon, addToPokedex, removeFromPokedex, activePage}) => {
  const  [pokemonData, setPokemonData] = useState(null)
  const navigation = useNavigate();
  
   useEffect(()=>{
-    axios.get(pokemon.url)
+    axios.get(`${BASE_URL }/${pokemon.name}`)
     .then(response =>{
       setPokemonData(response.data);
       console.log(response)
@@ -24,7 +25,8 @@ const PokemonCard = ({pokemon, addToPokedex, removeFromPokedex, activePage}) => 
     const goToDetailsPage = (name) => {
       navigation (`/pokemon/${pokemon.name}`, { state: { pokemonData } });
     };
-
+     console.log (pokemon)
+     console.log(pokemonData)
   return (
     <CardContainer>
       <img src={pokemonData?.sprites?.front_default}alt={pokemon.name} />
