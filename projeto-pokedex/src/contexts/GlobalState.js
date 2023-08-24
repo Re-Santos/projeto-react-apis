@@ -12,7 +12,8 @@ const addToPokedex = (pokemonToAdd) => {
   const isAlreadyOnPokedex = pokedex.find(
     (pokemonInPokedex) => pokemonInPokedex.name === pokemonToAdd.name
   );
-
+  
+  console.log(pokemonToAdd)
   if (!isAlreadyOnPokedex) {
     const newPokedex = [...pokedex, pokemonToAdd];
     setPokedex(newPokedex);

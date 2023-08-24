@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Header from '../../Componentes/Header/Header';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate} from 'react-router-dom';
 import { DetailContainer, DetailContent, ImageColumn } from './pokemonDetailPageStyle';
+import GlobalContext from '../../contexts/GlobalContext';
 
 
 const PokemonDetailPage = () => {
   const location = useLocation();
   const { state } = location;
   const pokemonData = state.pokemonData; // state.pokemonData para acessar os dados(revisar anotações pessoais do projeto)
-
   const [isCaptured, setIsCaptured] = useState(false); //erro estava nas aspas do false
   const navigate = useNavigate();
+  const context = useContext(GlobalContext)
 
   const toggleCapture = () => {
     setIsCaptured(prevState => !prevState);
-  };
+    if (isCaptured) {
+      context.removeFromPokedex(pokemonData);
+    } else {
+      context.addToPokedex(pokemonData);
+    }
+  }
+
+  console.log ("pokemonData:", pokemonData)
+  console.log ("isCaptured:", isCaptured)
 
   return (
     <>
