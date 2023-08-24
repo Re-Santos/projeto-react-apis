@@ -12,14 +12,14 @@ export const AppRouter = ({pokedex, addToPokedex, removeFromPokedex,pokemonData,
             {/* <Header/> */}
             <Routes>
                 <Route path="/" element={<PokemonsListPage 
-                pokedex={pokedex}
-                addToPokedex={addToPokedex}
-                pokemonData={pokemonData}
-                setPokemonData={setPokemonData}
+                // pokedex={pokedex}
+                // addToPokedex={addToPokedex}
+                // pokemonData={pokemonData}
+                // setPokemonData={setPokemonData}
                 />} />
                 <Route path="/pokedex" element={<PokedexPage 
-                pokedex={pokedex}
-                removeFromPokedex={removeFromPokedex}
+                // pokedex={pokedex}
+                // removeFromPokedex={removeFromPokedex}
                 />} />
                 <Route path="/pokemon/:id" element={<PokemonDetailPage/>} 
                 />

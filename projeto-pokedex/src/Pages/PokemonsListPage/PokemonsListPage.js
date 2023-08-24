@@ -5,9 +5,12 @@ import { BASE_URL} from '../../constants/url';
 import { HomeContainer } from './pokemonsListPageStyle';
 import Header from '../../Componentes/Header/Header';
 import { Link } from 'react-router-dom';
+import {useContext} from 'react';
+import GlobalContext from '../../contexts/GlobalContext';
 
-
-const PokemonsListPage = ({pokedex, addToPokedex}) => {
+const PokemonsListPage = () => {
+   const context = useContext(GlobalContext);
+   console.log (context)
    const [pokemonList, setPokemonList]= useState([]);
   //  const [pokedex, setPokedex] = useState([]);
    
@@ -37,7 +40,7 @@ const PokemonsListPage = ({pokedex, addToPokedex}) => {
         <PokemonCard 
         key ={pokemon.name} 
         pokemon={pokemon}
-        addToPokedex={addToPokedex}
+        addToPokedex={context.addToPokedex}
         activePage = "/"
         />
       ))}
