@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Header from '../../Componentes/Header/Header';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DetailContainer, DetailContent, ImageColumn } from './pokemonDetailPageStyle';
-import axios from 'axios';
+
 
 const PokemonDetailPage = () => {
   const location = useLocation();
@@ -55,7 +55,7 @@ const PokemonDetailPage = () => {
                 {pokemonData.moves ? (
                   pokemonData.moves.slice(0,4).map(move => (
                     <li key={move.move.name}>
-                      {move.move.name}: {move.move.name}
+                      {move.move.name}
                     </li>
                   ))
                 ) : (

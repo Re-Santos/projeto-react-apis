@@ -1,35 +1,21 @@
-import React, {useState} from "react";
+import React from "react";
 import { AppRouter } from "./Routes/AppRouter";
-
+import GlobalContext from "./contexts/GlobalContext";
+import GlobalState from "./contexts/GlobalState";
 
 const App = () => {
-  const [pokedex, setPokedex] = useState([]);
-  
-
-  const addToPokedex = (pokemonToAdd) => {
-    const isAlreadyOnPokedex = pokedex.find(
-      (pokemonInPokedex) => pokemonInPokedex.name === pokemonToAdd.name
-    );
-
-    if (!isAlreadyOnPokedex) {
-      const newPokedex = [...pokedex, pokemonToAdd];
-      setPokedex(newPokedex);
-    }
-  };
-
-  const removeFromPokedex = (pokemon) => {
-    setPokedex(prevPokedex => prevPokedex.filter(p => p.name !== pokemon.name));
-  };
  
   return (
     <div>
+     <GlobalState>
      <AppRouter 
     
-     pokedex={pokedex} 
-     addToPokedex={addToPokedex} 
-     removeFromPokedex={removeFromPokedex} 
+    //  pokedex={pokedex} 
+    //  addToPokedex={addToPokedex} 
+    //  removeFromPokedex={removeFromPokedex} 
   
      />
+     </GlobalState>
     </div>
   );
 }
