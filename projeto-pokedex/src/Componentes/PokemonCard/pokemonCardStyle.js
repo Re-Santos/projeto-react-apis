@@ -10,11 +10,12 @@ export const CardContainer = styled.div`
   text-align: center;
 
   img {
-    height: 200px;
+    min-height: 200px;
+   
   }
   
   button{
-    width: 50% 50%
+    width: 50% 50%;
   }
 `;
 

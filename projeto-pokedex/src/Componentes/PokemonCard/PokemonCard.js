@@ -19,7 +19,7 @@ const PokemonCard = ({pokemon, addToPokedex, removeFromPokedex, activePage}) => 
     .catch(error =>{
       console.error ("error fetching Pokemon Data:", error);
     });
- },[pokemon.url]);
+ },[pokemon]);
     console.log(pokemonData)
 
     const goToDetailsPage = (name) => {

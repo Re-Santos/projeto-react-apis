@@ -1,17 +1,23 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Header from '../../Componentes/Header/Header';
 import { useLocation, useNavigate} from 'react-router-dom';
-import { DetailContainer, DetailContent, ImageColumn } from './pokemonDetailPageStyle';
+import { DetailContainer, DetailContent, ImageColumn,Title, StyledLinkButton, StyledButton } from './pokemonDetailPageStyle';
 import GlobalContext from '../../contexts/GlobalContext';
 
 
 const PokemonDetailPage = () => {
+  const [isPokemonAdded, setIsPokemonAdded] = useState(false);
   const location = useLocation();
   const { state } = location;
   const pokemonData = state.pokemonData; // state.pokemonData para acessar os dados(revisar anotações pessoais do projeto)
   const [isCaptured, setIsCaptured] = useState(false); //erro estava nas aspas do false
   const navigate = useNavigate();
   const context = useContext(GlobalContext)
+
+  useEffect(() => {
+    const isPokemonCaptured = context.pokedex.some(pokemon => pokemon.name === pokemonData.name);
+    setIsCaptured(isPokemonCaptured);
+  }, [context.pokedex, pokemonData.name]);
 
   const toggleCapture = () => {
     setIsCaptured(prevState => !prevState);
@@ -20,22 +26,24 @@ const PokemonDetailPage = () => {
     } else {
       context.addToPokedex(pokemonData);
     }
+    setIsPokemonAdded(true)
   }
 
-  console.log ("pokemonData:", pokemonData)
-  console.log ("isCaptured:", isCaptured)
 
   return (
     <>
+
       <Header
-        leftButton={<button onClick={() => navigate(-1)}>Todos Pokémons</button>}
+    
+        leftButton={<StyledLinkButton to="/">Todos Pokémons</StyledLinkButton>} 
         rightButton={
-          <button onClick={toggleCapture}>
+          <StyledButton onClick={toggleCapture}>
             {isCaptured ? 'Excluir da Pokedex' : 'Adicionar a Pokedex'}
-          </button>
+          </StyledButton>
         }
       />
-      <h1>Pokemon Detail Page</h1>
+      
+      <Title>Detalhes</Title>
       <DetailContainer>
         {pokemonData && (
           <DetailContent>
