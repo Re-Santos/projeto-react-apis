@@ -1,12 +1,15 @@
 import React from 'react'
-import { HeaderContainer, Nav, Title } from './headerStyle';
+import { HeaderContainer, Nav  } from './headerStyle';
 import {Link} from 'react-router-dom';
+// import image1 from './Images/image1.png';
 
 
 const Header = ({leftButton, rightButton}) => {
   return (
    <HeaderContainer>
-    <Title>Lista de Pokemons</Title>
+  
+      <img src="/Images/image1.png" alt="Imagem título pokemon" />
+
     <Nav>
         {leftButton && <div className="left-button">{leftButton}</div>}
         {rightButton && <div className="right-button">{rightButton}</div>}

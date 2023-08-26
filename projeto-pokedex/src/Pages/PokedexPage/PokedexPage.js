@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import PokemonCard from '../../Componentes/PokemonCard/PokemonCard';
-import { PokedexContainer } from './pokedexPageStyle';
+import { PokedexContainer,Title, StyledLinkButton } from './pokedexPageStyle';
 import Header from '../../Componentes/Header/Header';
 import { Link } from 'react-router-dom';
 import GlobalContext from '../../contexts/GlobalContext';
@@ -11,8 +11,9 @@ const PokedexPage = () => {
   return (
     <>
       <div>
-      <Header leftButton={<Link to="/">Voltar para Lista de pokemons</Link>} />
+      <Header leftButton={<StyledLinkButton to="/">Todos Pokémons</StyledLinkButton>} />
       </div>
+      <Title>Meus Pokémons</Title>
     <PokedexContainer>
       {context.pokedex.map(pokemon => (
         <PokemonCard

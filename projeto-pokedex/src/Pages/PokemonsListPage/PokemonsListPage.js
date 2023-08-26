@@ -2,7 +2,7 @@ import React, {useState, useEffect}from 'react'
 import PokemonCard from '../../Componentes/PokemonCard/PokemonCard'
 import axios from 'axios'
 import { BASE_URL} from '../../constants/url';
-import { HomeContainer } from './pokemonsListPageStyle';
+import { HomeContainer, Title, StyledLinkButton } from './pokemonsListPageStyle';
 import Header from '../../Componentes/Header/Header';
 import { Link } from 'react-router-dom';
 import {useContext} from 'react';
@@ -32,9 +32,11 @@ const PokemonsListPage = () => {
   return (
     <>
     <div>
-      <Header rightButton={<Link to="/pokedex">Ver minha Pokedex</Link>} />
+      <Header rightButton={<StyledLinkButton to="/pokedex">Pokédex</StyledLinkButton>} />
     </div>
+    <Title>Todos os Pokémons</Title>
     <HomeContainer>
+
        {pokemonList.map(pokemon =>(
          
         <PokemonCard 
