@@ -10,7 +10,7 @@ export const HeaderContainer= styled.div`
    width:307px;
    height:113px;
    margin-top:21px;
-   margin-left:30%;
+   margin-left:40%;
    text-align: center; 
    } 
 `;

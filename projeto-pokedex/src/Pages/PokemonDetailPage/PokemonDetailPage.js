@@ -48,7 +48,7 @@ const PokemonDetailPage = () => {
 
       <Header
     
-        leftButton={<StyledLinkButton to="/">Todos Pokémons</StyledLinkButton>} 
+        leftButton={<StyledLinkButton to="/">{"<"} Todos Pokémons</StyledLinkButton>} 
         rightButton={
           <StyledButton onClick={toggleCapture}>
             {isCaptured ? 'Excluir da Pokedex' : 'Adicionar a Pokedex'}

@@ -41,7 +41,7 @@ const PokemonCard = ({ pokemon, addToPokedex, removeFromPokedex, activePage }) =
     return null;
   }
 
-  const pokemonType = pokemonData?.types[0]?.type?.name || '';
+  const pokemonType = (pokemonData?.types[0]?.type?.name || '').toLowerCase();
 
   const togglePokeball = () => {
     setShowPokeball(true);

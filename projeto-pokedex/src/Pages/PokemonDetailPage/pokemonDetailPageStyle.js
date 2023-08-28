@@ -66,6 +66,7 @@ export const StyledLinkButton = styled(Link)`
   text-decoration: underline;
   cursor: pointer;
   transition: color 0.3s ease-out;
+  white-space: nowrap;
 
   &:hover {
     color: #33a4f5;

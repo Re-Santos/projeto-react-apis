@@ -10,7 +10,7 @@ const PokedexPage = () => {
   return (
     <>
       <div>
-        <Header leftButton={<StyledLinkButton to="/">Todos Pokémons</StyledLinkButton>} />
+        <Header leftButton={<StyledLinkButton to="/">{"<"} Todos Pokémons</StyledLinkButton>} />
       </div>
         <Title>Meus Pokémons</Title>
       <PokedexContainer>
