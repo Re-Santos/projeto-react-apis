@@ -18,26 +18,31 @@ import steel from "../assets/pokemon-types/steel.png";
 import water from "../assets/pokemon-types/water.png";
 
 const typesToImages = {
-  Bug: bug,
-  Dark: dark,
-  Dragon: dragon,
-  Electric: electric,
-  Fairy: fairy,
-  Fighting: fighting,
-  Fire: fire,
-  Flying: flying,
-  Ghost: ghost,
-  Grass: grass,
-  Ground: ground,
-  Ice: ice,
-  Normal: normal,
-  Poison: poison,
-  Psychic: psychic,
-  Rock: rock,
-  Steel: steel,
-  Water: water,
+  bug: bug,
+  dark: dark,
+  dragon: dragon,
+  electric: electric,
+  fairy: fairy,
+  fighting: fighting,
+  fire: fire,
+  flying: flying,
+  ghost: ghost,
+  grass: grass,
+  ground: ground,
+  ice: ice,
+  normal: normal,
+  poison: poison,
+  psychic: psychic,
+  rock: rock,
+  steel: steel,
+  water: water,
 };
 
+// export const getTypes = (type) => {
+//   return typesToImages[type] || water;
+// };
+
 export const getTypes = (type) => {
-  return typesToImages[type] || water;
+  const lowercaseType = type.toLowerCase(); // Converta para minúsculas
+  return typesToImages[lowercaseType] || water;
 };

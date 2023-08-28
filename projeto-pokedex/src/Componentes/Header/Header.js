@@ -2,6 +2,7 @@ import React from 'react'
 import { HeaderContainer, Nav  } from './headerStyle';
 
 
+
 const Header = ({leftButton, rightButton}) => {
   return (
    <HeaderContainer>

@@ -15,6 +15,7 @@ const PokemonsListPage = ({pokemonData}) => {
    const context = useContext(GlobalContext);
    console.log (context)
    const [pokemonList, setPokemonList]= useState([]);
+
  
 
    useEffect(()=>{
