@@ -7,7 +7,6 @@ export const PokedexContainer = styled.div`
   justify-content: center;
   `;
 
-
 export const StyledLinkButton = styled(Link)`
   width: 210px;
   height: 36px;
@@ -25,6 +24,7 @@ export const StyledLinkButton = styled(Link)`
 
   &:hover {
     color: #33a4f5;
+    transform: scale(1.05);
   }
 `;
 
@@ -35,5 +35,6 @@ export const Title = styled.h1`
  line-height:72px;
  font-family:Poppins;
  color:#ffff;
+ padding-left:2%;
 
 `;
