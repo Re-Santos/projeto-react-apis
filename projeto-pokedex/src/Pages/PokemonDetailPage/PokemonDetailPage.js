@@ -1,7 +1,21 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Header from '../../Componentes/Header/Header';
-import { useLocation, useNavigate} from 'react-router-dom';
-import { DetailContainer, DetailContent, ImageColumn,Title, StyledLinkButton, StyledButton } from './pokemonDetailPageStyle';
+import { useLocation} from 'react-router-dom';
+import { DetailContainer, 
+         DetailContent, 
+         ImageColumn,
+         Title, 
+         StyledLinkButton,
+         StyledButton,
+         FirstImage, 
+         SecondImage,
+         BaseStatsColumn,
+         BaseStatsTitle,
+         BaseStats,
+         MovesColumn,
+         MovesTitle,
+         MoveItem,
+                 } from './pokemonDetailPageStyle';
 import GlobalContext from '../../contexts/GlobalContext';
 
 
@@ -9,25 +23,24 @@ const PokemonDetailPage = () => {
   const [isPokemonAdded, setIsPokemonAdded] = useState(false);
   const location = useLocation();
   const { state } = location;
-  const pokemonData = state.pokemonData; // state.pokemonData para acessar os dados(revisar anotações pessoais do projeto)
-  const [isCaptured, setIsCaptured] = useState(false); //erro estava nas aspas do false
-  const navigate = useNavigate();
+  const pokemonData = state.pokemonData; 
+  const [isCaptured, setIsCaptured] = useState(false); 
   const context = useContext(GlobalContext)
 
-  useEffect(() => {
-    const isPokemonCaptured = context.pokedex.some(pokemon => pokemon.name === pokemonData.name);
-    setIsCaptured(isPokemonCaptured);
-  }, [context.pokedex, pokemonData.name]);
+    useEffect(() => {
+      const isPokemonCaptured = context.pokedex.some(pokemon => pokemon.name === pokemonData.name);
+      setIsCaptured(isPokemonCaptured);
+    }, [context.pokedex, pokemonData.name]);
 
-  const toggleCapture = () => {
-    setIsCaptured(prevState => !prevState);
-    if (isCaptured) {
-      context.removeFromPokedex(pokemonData);
-    } else {
-      context.addToPokedex(pokemonData);
+    const toggleCapture = () => {
+      setIsCaptured(prevState => !prevState);
+      if (isCaptured) {
+        context.removeFromPokedex(pokemonData);
+      } else {
+        context.addToPokedex(pokemonData);
+      }
+      setIsPokemonAdded(true)
     }
-    setIsPokemonAdded(true)
-  }
 
 
   return (
@@ -48,37 +61,44 @@ const PokemonDetailPage = () => {
         {pokemonData && (
           <DetailContent>
             <ImageColumn>
-              <img src={pokemonData?.sprites?.front_default} alt={pokemonData.name} />
-              <img src={pokemonData?.sprites?.back_default} alt={pokemonData.name} />
+             <FirstImage>
+              <div>
+                <img src={pokemonData?.sprites?.front_default} alt={pokemonData.name} />
+              </div>
+             </FirstImage>
+             < SecondImage>
+             <div>
+                <img src={pokemonData?.sprites?.back_default} alt={pokemonData.name} />
+              </div>
+              </SecondImage>
             </ImageColumn>
-
+            <BaseStats>
+              <BaseStatsColumn>
+            
+                <BaseStatsTitle>Base Stats</BaseStatsTitle>
+                <ul>
+                  {pokemonData.stats ? (
+                    pokemonData.stats.map(stat => (
+                      <li key={stat.stat.name}>
+                        {stat.stat.name}: {stat.base_stat}
+                      </li>
+                    ))
+                  ) : (
+                    <p>No base stats available.</p>
+                  )}
+                </ul>
+              </BaseStatsColumn>
+              </BaseStats>
             <div>
-              <h2>Base Stats</h2>
+              
+              <MovesColumn>
+              <MovesTitle>Moves</MovesTitle>
               <ul>
-                {pokemonData.stats ? (
-                  pokemonData.stats.map(stat => (
-                    <li key={stat.stat.name}>
-                      {stat.stat.name}: {stat.base_stat}
-                    </li>
-                  ))
-                ) : (
-                  <p>No base stats available.</p>
-                )}
+                {pokemonData.moves.slice(0, 4).map(move => (
+                  <MoveItem key={move.move.name}>{move.move.name}</MoveItem>
+                ))}
               </ul>
-            </div>
-            <div>
-              <h2>Moves:</h2>
-              <ul>
-                {pokemonData.moves ? (
-                  pokemonData.moves.slice(0,4).map(move => (
-                    <li key={move.move.name}>
-                      {move.move.name}
-                    </li>
-                  ))
-                ) : (
-                  <p>No moves available.</p>
-                )}
-              </ul>
+            </MovesColumn>
             </div>
           </DetailContent>
         )}
