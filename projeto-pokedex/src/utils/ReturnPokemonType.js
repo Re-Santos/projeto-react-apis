@@ -38,11 +38,8 @@ const typesToImages = {
   water: water,
 };
 
-// export const getTypes = (type) => {
-//   return typesToImages[type] || water;
-// };
 
 export const getTypes = (type) => {
-  const lowercaseType = type.toLowerCase(); // Converta para minúsculas
+  const lowercaseType = type.toLowerCase();
   return typesToImages[lowercaseType] || water;
 };
