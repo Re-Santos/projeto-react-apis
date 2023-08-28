@@ -1,4 +1,45 @@
-# **Projeto React e API's**
+
+# Projeto React e API's 
+
+# Pokedex 
+
+Este é um aplicativo de Pokedex construído com React que permite visualizar e capturar Pokémon. Você pode navegar pela lista de Pokémon disponíveis, capturar os que você gosta e ver mais detalhes sobre cada Pokémon.
+
+## Índice
+
+- [Demo](#demo)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias)
+
+## Demo
+
+![image](https://github.com/Re-Santos/projeto-react-apis/assets/123095086/8a438433-812f-4c85-859e-3bade452cfa1)
+
+[Veja a demonstração ao vivo](https://pokedex-react-renatasantos.surge.sh/)
+
+## Funcionalidades
+
+- Visualizar a lista de Pokémon disponíveis.
+- Capturar e remover Pokémon da sua Pokédex.
+- Ver mais detalhes sobre cada Pokémon.
+- ...
+
+## Tecnologias
+
+- React
+- React Router
+- React Context
+- Styled Components
+- Axios
+- API
+- ...
+
+
+<hr/>
+
+### **Especificações do projeto**
+					 
+## **Projeto React e API's**<br/>
 O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes. O projeto está subdivido em temas de acordo com os conteúdos que estudado durante o Módulo 2 - Frontend.
 
 Este projeto terá como fonte de dados para a sua criação a [Poke Api](https://pokeapi.co/ "Poke Api"), uma Api pública, muito usada para aplicações focadas em aprendizado de programação e também usada em cases de processos seletivos.
@@ -40,22 +81,3 @@ Os conteúdos principais  a serem estudados são:
 - [ ] [Criar um readme](https://www.youtube.com/watch?v=1QKwP0SJK-c "Crie um readme") para o projeto;
 
 
-### Instruções para preparar o seu repositório
-
-- Faça o fork desse repositório e realize o clone da sua cópia `seu-nome-de-usuario/projeto-lista-intro-javascript`.
-   <details>
-   <summary>Quer uma dica?</summary>
-   <img src="https://firebasestorage.googleapis.com/v0/b/assets-conteudo.appspot.com/o/gerais%2Ffork.png?alt=media&token=7030e997-246a-41fe-a75f-2a2ced61e54d" alt="Como adicionar o projeto no repositório"/>
-   </details>
-- Crie os arquivos do projeto dentro deste repo;
-- **Lembre-se de abrir os PRs para seu próprio repositório.**
-- Para isso, você precisará fazer o projeto utilizando **branches**. Não faça as alterações direto na branch ```main```!
-
-### Instruções de entrega
-
-![image](https://user-images.githubusercontent.com/71137294/227538428-52271ed2-df78-4500-b286-25f03aa7bf2e.png)
-1.  [Crie o surge](https://labenu.notion.site/Deploy-de-front-React-com-Surge-f902a03ec1d247dc9af9aee5a1469d96) do seu projeto e pegue o link da publicação(deploy);
-2.  Adicione o link do surge no readme do seu projeto;
-3.  Tire print das páginas do seu projeto e cole no readme;
-4.  Abra um novo Pull Request (PR) com a frase **PR para correção**. Caso não saiba como fazê-lo, assista a esse [vídeo](https://vimeo.com/842884374/3e403f4281?share=copy).
-5.  Envie o link do seu PR e do surge no [formulário de entrega](https://docs.google.com/forms/d/e/1FAIpQLSfGGRaglpzWpdREBBfq3eUCMXkRXuiS61Zfyy0L_Ce0uNIXTA/viewform).
